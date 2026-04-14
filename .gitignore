@@ -33,3 +33,6 @@ coverage/
 
 # 文档目录（仅 AI 和本地开发者阅读，不上传 Git）
 docs/
+
+# AI 协作规则（仅本地使用）
+AGENTS.md

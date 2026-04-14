@@ -52,7 +52,7 @@ pnpm list --filter "@rag-sdk/*"
 
 | 文档 | 路径 | 说明 |
 |------|------|------|
-| 项目初始化需求 | `01. 项目初始化.md` | 原始需求文档 |
+| 项目初始化需求 | `docs/specs/项目初始化.md` | 原始需求文档 |
 | 项目初始化文档 | `docs/decisions/项目初始化.md` | 项目状态与交接信息 |
 
 ## 特殊约束
@@ -63,3 +63,7 @@ pnpm list --filter "@rag-sdk/*"
 
 - 如需分享文档，请通过其他方式传递
 - 如需在仓库中保留文档，请将文档移至 `packages/*/README.md` 或其他合适位置
+
+### AGENTS.md 不上传 Git
+
+`AGENTS.md` 是 AI 协作规则文件，**已加入 `.gitignore`**，仅本地使用，不会上传到 Git。
