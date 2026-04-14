@@ -30,3 +30,6 @@ coverage/
 *.swo
 *~
 .DS_Store
+
+# 文档目录（仅 AI 和本地开发者阅读，不上传 Git）
+docs/

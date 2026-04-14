@@ -58,20 +58,19 @@ rag-sdk/
 | @rag-sdk/eval | RAG 评估框架 |
 | @rag-sdk/utils | 通用工具函数 |
 
-## 文档
-
-- [项目初始化需求](./01.%20项目初始化.md)
-- [项目交接文档](./docs/decisions/00-项目交接文档.md)
-- [AI 协作规则](./AGENTS.md)
-
 ## 约束规则
 
 > **所有文档必须使用中文生成。**
 
 详见 [AGENTS.md](./AGENTS.md)
 
+> **docs 目录不上传 Git**
+>
+> `docs/` 目录仅用于 AI 协作和本地开发者阅读，**已加入 `.gitignore`**，不会上传到 Git。
+
 ## Git 提交记录
 
 ```
 db0ad9d 初始化项目：创建 RAG SDK Monorepo 目录结构
+3307719 文档：添加交接文档、更新项目规则、创建项目 README
 ```
