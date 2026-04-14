@@ -34,16 +34,40 @@ pnpm list --filter "@rag-sdk/*"
 
 ```
 rag-sdk/
-├── packages/          # SDK 核心包
-│   ├── core/         # 核心类型、接口
-│   ├── runtime/      # 运行时组件
-│   ├── indexing/     # 索引管道
-│   ├── adapters/     # 外部适配器
-│   ├── observability/# 可观测性
-│   ├── eval/         # 评估框架
-│   └── utils/        # 工具函数
-├── docs/             # 文档
-└── .vscode/          # VSCode 配置
+├── packages/              # SDK 核心包
+│   ├── core/             # 核心类型、接口
+│   ├── runtime/          # 运行时组件
+│   ├── indexing/         # 索引管道
+│   ├── adapters/         # 外部适配器
+│   ├── observability/    # 可观测性
+│   ├── eval/             # 评估框架
+│   └── utils/            # 工具函数
+├── docs/                 # 文档（不上传 Git）
+└── .vscode/              # VSCode 配置
+```
+
+## Package 结构
+
+每个包包含以下结构：
+
+```
+packages/[package-name]/
+├── package.json          # 包配置（updated）
+└── src/                  # 源代码入口
+    ├── index.ts          # 主入口，导出所有子模块
+    ├── [module1]/
+    │   └── index.ts      # 子模块入口
+    ├── [module2]/
+    └── ...
+```
+
+使用方式：
+```typescript
+// 导入整个包
+import * as core from '@rag-sdk/core';
+
+// 导入子模块
+import { TypeUtils } from '@rag-sdk/core/types';
 ```
 
 ## 包说明
