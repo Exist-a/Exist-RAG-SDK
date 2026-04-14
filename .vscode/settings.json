@@ -1,0 +1,14 @@
+{
+  "typescript.preferences.moduleSpecifier": "relative",
+  "javascript.preferences.moduleSpecifier": "relative",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.pnpm": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/pnpm-lock.yaml": true
+  }
+}

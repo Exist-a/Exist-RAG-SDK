@@ -1,0 +1,13 @@
+{
+  "name": "@rag-sdk/utils",
+  "version": "0.0.1",
+  "description": "Utility functions, logger and configuration helpers",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "files": [],
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {}
+}

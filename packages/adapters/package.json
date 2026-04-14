@@ -1,0 +1,13 @@
+{
+  "name": "@rag-sdk/adapters",
+  "version": "0.0.1",
+  "description": "Adapters for LLM, embedding, vector store and other external services",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "files": [],
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {}
+}

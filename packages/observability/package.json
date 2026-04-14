@@ -1,0 +1,13 @@
+{
+  "name": "@rag-sdk/observability",
+  "version": "0.0.1",
+  "description": "Observability hooks, tracing and metrics for RAG SDK",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "files": [],
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {}
+}
