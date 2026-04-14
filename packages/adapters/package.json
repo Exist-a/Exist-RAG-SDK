@@ -3,11 +3,20 @@
   "version": "0.0.1",
   "description": "Adapters for LLM, embedding, vector store and other external services",
   "type": "module",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "files": [],
+  "exports": {
+    ".": "./src/index.ts",
+    "./llm": "./src/llm/index.ts",
+    "./embedding": "./src/embedding/index.ts",
+    "./vector-store": "./src/vector-store/index.ts",
+    "./reranker": "./src/reranker/index.ts",
+    "./loader": "./src/loader/index.ts"
+  },
+  "files": [
+    "src"
+  ],
   "scripts": {},
   "dependencies": {},
   "devDependencies": {},
   "peerDependencies": {}
 }
+

@@ -3,9 +3,15 @@
   "version": "0.0.1",
   "description": "Utility functions, logger and configuration helpers",
   "type": "module",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "files": [],
+  "exports": {
+    ".": "./src/index.ts",
+    "./logger": "./src/logger/index.ts",
+    "./config": "./src/config/index.ts",
+    "./helpers": "./src/helpers/index.ts"
+  },
+  "files": [
+    "src"
+  ],
   "scripts": {},
   "dependencies": {},
   "devDependencies": {},

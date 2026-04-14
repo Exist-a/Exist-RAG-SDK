@@ -3,11 +3,19 @@
   "version": "0.0.1",
   "description": "Evaluation framework for RAG systems",
   "type": "module",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "files": [],
+  "exports": {
+    ".": "./src/index.ts",
+    "./dataset": "./src/dataset/index.ts",
+    "./runner": "./src/runner/index.ts",
+    "./metrics": "./src/metrics/index.ts",
+    "./judge": "./src/judge/index.ts"
+  },
+  "files": [
+    "src"
+  ],
   "scripts": {},
   "dependencies": {},
   "devDependencies": {},
   "peerDependencies": {}
 }
+

@@ -3,11 +3,21 @@
   "version": "0.0.1",
   "description": "Document indexing pipeline components",
   "type": "module",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "files": [],
+  "exports": {
+    ".": "./src/index.ts",
+    "./loader": "./src/loader/index.ts",
+    "./chunking": "./src/chunking/index.ts",
+    "./enrich": "./src/enrich/index.ts",
+    "./embedding": "./src/embedding/index.ts",
+    "./writer": "./src/writer/index.ts",
+    "./pipeline": "./src/pipeline/index.ts"
+  },
+  "files": [
+    "src"
+  ],
   "scripts": {},
   "dependencies": {},
   "devDependencies": {},
   "peerDependencies": {}
 }
+

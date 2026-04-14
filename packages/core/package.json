@@ -3,11 +3,20 @@
   "version": "0.0.1",
   "description": "Core types, interfaces and specifications for RAG SDK",
   "type": "module",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "files": [],
+  "exports": {
+    ".": "./src/index.ts",
+    "./types": "./src/types/index.ts",
+    "./spec": "./src/spec/index.ts",
+    "./interfaces": "./src/interfaces/index.ts",
+    "./pipeline": "./src/pipeline/index.ts",
+    "./errors": "./src/errors/index.ts"
+  },
+  "files": [
+    "src"
+  ],
   "scripts": {},
   "dependencies": {},
   "devDependencies": {},
   "peerDependencies": {}
 }
+

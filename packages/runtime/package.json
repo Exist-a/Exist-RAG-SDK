@@ -3,11 +3,20 @@
   "version": "0.0.1",
   "description": "Runtime components for RAG pipeline execution",
   "type": "module",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "files": [],
+  "exports": {
+    ".": "./src/index.ts",
+    "./retriever": "./src/retriever/index.ts",
+    "./reranker": "./src/reranker/index.ts",
+    "./generator": "./src/generator/index.ts",
+    "./context": "./src/context/index.ts",
+    "./pipeline": "./src/pipeline/index.ts"
+  },
+  "files": [
+    "src"
+  ],
   "scripts": {},
   "dependencies": {},
   "devDependencies": {},
   "peerDependencies": {}
 }
+

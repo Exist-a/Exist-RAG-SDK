@@ -3,11 +3,18 @@
   "version": "0.0.1",
   "description": "Observability hooks, tracing and metrics for RAG SDK",
   "type": "module",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "files": [],
+  "exports": {
+    ".": "./src/index.ts",
+    "./hooks": "./src/hooks/index.ts",
+    "./tracing": "./src/tracing/index.ts",
+    "./metrics": "./src/metrics/index.ts"
+  },
+  "files": [
+    "src"
+  ],
   "scripts": {},
   "dependencies": {},
   "devDependencies": {},
   "peerDependencies": {}
 }
+
