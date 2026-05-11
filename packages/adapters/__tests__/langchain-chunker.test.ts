@@ -1,4 +1,17 @@
-import { test, expect } from "vitest";
+import { test, expect, vi } from "vitest";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+
+// 直接读取本地 tiktoken ranks 数据，避免测试时从网络下载
+function loadGpt2Ranks(): Record<string, unknown> {
+  const ranksPath = resolve(
+    "node_modules/.pnpm/js-tiktoken@1.0.21/node_modules/js-tiktoken/dist/ranks/gpt2.js"
+  );
+  const content = readFileSync(ranksPath, "utf-8");
+  const json = content.replace("export default ", "").replace(/;\s*$/, "");
+  return JSON.parse(json);
+}
+
 import {
   RecursiveTextSplitter,
   TokenTextSplitterPreset,
@@ -44,14 +57,24 @@ test("chunkIndex 递增", async () => {
 });
 
 test("Token 切分预设可正常工作", async () => {
-  const chunker = new TokenTextSplitterPreset({ chunkSize: 10, chunkOverlap: 2 });
-  const chunks = await chunker.chunk({
-    id: "doc-4",
-    content: "Hello world this is a test document for token splitting.",
-  });
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = vi.fn(async () => ({
+    ok: true,
+    json: async () => loadGpt2Ranks(),
+  })) as unknown as typeof fetch;
 
-  expect(chunks.length).toBeGreaterThan(0);
-}, 15000);
+  try {
+    const chunker = new TokenTextSplitterPreset({ chunkSize: 10, chunkOverlap: 2 });
+    const chunks = await chunker.chunk({
+      id: "doc-4",
+      content: "Hello world this is a test document for token splitting.",
+    });
+
+    expect(chunks.length).toBeGreaterThan(0);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+}, 30000);
 
 test("Markdown 切分预设可正常工作", async () => {
   const chunker = new MarkdownTextSplitterPreset({ chunkSize: 50, chunkOverlap: 10 });

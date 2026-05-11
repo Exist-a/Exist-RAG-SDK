@@ -1,5 +1,5 @@
 {
-  "name": "@exist-a/rag-sdk",
+  "name": "@rag-sdk/rag-sdk",
   "version": "1.0.0",
   "description": "RAG SDK - A comprehensive Retrieval-Augmented Generation SDK",
   "keywords": [
