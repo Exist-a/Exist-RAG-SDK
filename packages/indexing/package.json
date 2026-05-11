@@ -1,23 +1,62 @@
 {
   "name": "@rag-sdk/indexing",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Document indexing pipeline components",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./src/index.ts",
-    "./loader": "./src/loader/index.ts",
-    "./chunking": "./src/chunking/index.ts",
-    "./enrich": "./src/enrich/index.ts",
-    "./embedding": "./src/embedding/index.ts",
-    "./writer": "./src/writer/index.ts",
-    "./pipeline": "./src/pipeline/index.ts"
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./loaders": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./chunkers": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./transformers": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./embedders": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./stores": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./pipeline": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   },
   "files": [
-    "src"
+    "dist"
   ],
-  "scripts": {},
-  "dependencies": {},
-  "devDependencies": {},
-  "peerDependencies": {}
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "demo": "echo 'Run demo with: npx tsx demo/run-indexing.ts'"
+  },
+  "dependencies": {
+    "@rag-sdk/core": "workspace:^",
+    "@rag-sdk/utils": "workspace:^"
+  },
+  "license": "MIT",
+  "author": "exist-a <257734814@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Exist-a/Exist-RAG-SDK.git"
+  },
+  "homepage": "https://github.com/Exist-a/Exist-RAG-SDK#readme",
+  "bugs": {
+    "url": "https://github.com/Exist-a/Exist-RAG-SDK/issues"
+  }
 }
-

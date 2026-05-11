@@ -1,18 +1,54 @@
 {
-  "name": "rag-sdk",
-  "version": "0.0.1",
+  "name": "@exist-a/rag-sdk",
+  "version": "1.0.0",
   "description": "RAG SDK - A comprehensive Retrieval-Augmented Generation SDK",
+  "keywords": [
+    "rag"
+  ],
   "private": true,
   "type": "module",
   "packageManager": "pnpm@9.0.0",
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {},
+  "scripts": {
+    "build": "pnpm -r run build",
+    "typecheck": "pnpm -r exec tsc --noEmit",
+    "test": "vitest run",
+    "check": "pnpm run typecheck && pnpm run test",
+    "smoke": "vitest run tests/smoke",
+    "verify": "pnpm run check && pnpm run smoke",
+    "lint": "eslint packages/**/*.ts",
+    "format": "prettier --write \"packages/**/*.ts\" \"tests/**/*.ts\"",
+    "format:check": "prettier --check \"packages/**/*.ts\" \"tests/**/*.ts\""
+  },
   "devDependencies": {
-    "typescript": "^5.4.0"
+    "@eslint/js": "^10.0.1",
+    "@rag-sdk/adapters": "workspace:^",
+    "@rag-sdk/core": "workspace:^",
+    "@rag-sdk/indexing": "workspace:^",
+    "@rag-sdk/observability": "workspace:^",
+    "@rag-sdk/runtime": "workspace:^",
+    "@rag-sdk/utils": "workspace:^",
+    "@types/node": "^25.6.0",
+    "@typescript-eslint/eslint-plugin": "^8.59.2",
+    "@typescript-eslint/parser": "^8.59.2",
+    "eslint": "^10.3.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.8.3",
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.4.0",
+    "vitest": "^4.1.5"
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "license": "MIT",
+  "author": "exist-a <257734814@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Exist-a/Exist-RAG-SDK.git"
+  },
+  "homepage": "https://github.com/Exist-a/Exist-RAG-SDK#readme",
+  "bugs": {
+    "url": "https://github.com/Exist-a/Exist-RAG-SDK/issues"
   }
 }

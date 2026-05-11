@@ -1,22 +1,57 @@
 {
   "name": "@rag-sdk/core",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Core types, interfaces and specifications for RAG SDK",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./src/index.ts",
-    "./types": "./src/types/index.ts",
-    "./spec": "./src/spec/index.ts",
-    "./interfaces": "./src/interfaces/index.ts",
-    "./pipeline": "./src/pipeline/index.ts",
-    "./errors": "./src/errors/index.ts"
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./types": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./spec": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./interfaces": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./pipeline": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./errors": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   },
   "files": [
-    "src"
+    "dist"
   ],
-  "scripts": {},
-  "dependencies": {},
-  "devDependencies": {},
-  "peerDependencies": {}
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "demo": "echo 'Run demo with: npx tsx demo/usage.ts'"
+  },
+  "dependencies": {
+    "zod": "^4.4.3"
+  },
+  "license": "MIT",
+  "author": "exist-a <257734814@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Exist-a/Exist-RAG-SDK.git"
+  },
+  "homepage": "https://github.com/Exist-a/Exist-RAG-SDK#readme",
+  "bugs": {
+    "url": "https://github.com/Exist-a/Exist-RAG-SDK/issues"
+  }
 }
-

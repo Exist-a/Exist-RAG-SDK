@@ -1,22 +1,42 @@
 {
   "name": "@rag-sdk/runtime",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Runtime components for RAG pipeline execution",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./src/index.ts",
-    "./retriever": "./src/retriever/index.ts",
-    "./reranker": "./src/reranker/index.ts",
-    "./generator": "./src/generator/index.ts",
-    "./context": "./src/context/index.ts",
-    "./pipeline": "./src/pipeline/index.ts"
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./pipeline": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   },
   "files": [
-    "src"
+    "dist"
   ],
-  "scripts": {},
-  "dependencies": {},
-  "devDependencies": {},
-  "peerDependencies": {}
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "demo": "echo 'Run demo with: npx tsx demo/<script>.ts'"
+  },
+  "dependencies": {
+    "@rag-sdk/core": "workspace:^",
+    "@rag-sdk/utils": "workspace:^"
+  },
+  "license": "MIT",
+  "author": "exist-a <257734814@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Exist-a/Exist-RAG-SDK.git"
+  },
+  "homepage": "https://github.com/Exist-a/Exist-RAG-SDK#readme",
+  "bugs": {
+    "url": "https://github.com/Exist-a/Exist-RAG-SDK/issues"
+  }
 }
-

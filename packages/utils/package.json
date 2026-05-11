@@ -1,19 +1,59 @@
 {
   "name": "@rag-sdk/utils",
-  "version": "0.0.1",
-  "description": "Utility functions, logger and configuration helpers",
+  "version": "1.0.0",
+  "description": "Utility functions for RAG SDK",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./src/index.ts",
-    "./logger": "./src/logger/index.ts",
-    "./config": "./src/config/index.ts",
-    "./helpers": "./src/helpers/index.ts"
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./text": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./id": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./metadata": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./errors": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./formatting": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./logger": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   },
   "files": [
-    "src"
+    "dist"
   ],
-  "scripts": {},
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "demo": "echo 'No demo scripts yet'"
+  },
   "dependencies": {},
-  "devDependencies": {},
-  "peerDependencies": {}
+  "license": "MIT",
+  "author": "exist-a <257734814@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Exist-a/Exist-RAG-SDK.git"
+  },
+  "homepage": "https://github.com/Exist-a/Exist-RAG-SDK#readme",
+  "bugs": {
+    "url": "https://github.com/Exist-a/Exist-RAG-SDK/issues"
+  }
 }

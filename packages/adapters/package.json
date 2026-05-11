@@ -1,22 +1,52 @@
 {
   "name": "@rag-sdk/adapters",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Adapters for LLM, embedding, vector store and other external services",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./src/index.ts",
-    "./llm": "./src/llm/index.ts",
-    "./embedding": "./src/embedding/index.ts",
-    "./vector-store": "./src/vector-store/index.ts",
-    "./reranker": "./src/reranker/index.ts",
-    "./loader": "./src/loader/index.ts"
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./langchain": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./chroma": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   },
   "files": [
-    "src"
+    "dist"
   ],
-  "scripts": {},
-  "dependencies": {},
-  "devDependencies": {},
-  "peerDependencies": {}
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "demo": "echo 'Run demo with: npx tsx demo/langchain-adapter.ts or npx tsx demo/chroma-adapter.ts'"
+  },
+  "dependencies": {
+    "@langchain/classic": "^1.0.32",
+    "@langchain/core": "^1.1.44",
+    "@langchain/textsplitters": "^1.0.1",
+    "@rag-sdk/core": "workspace:^",
+    "@rag-sdk/indexing": "workspace:^",
+    "@rag-sdk/utils": "workspace:^",
+    "chromadb": "^3.4.3",
+    "langchain": "^1.4.0"
+  },
+  "license": "MIT",
+  "author": "exist-a <257734814@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Exist-a/Exist-RAG-SDK.git"
+  },
+  "homepage": "https://github.com/Exist-a/Exist-RAG-SDK#readme",
+  "bugs": {
+    "url": "https://github.com/Exist-a/Exist-RAG-SDK/issues"
+  }
 }
-

@@ -19,7 +19,7 @@ pnpm-debug.log*
 
 # IDE
 .idea/
-.vscode/settings.json.local
+.vscode/
 
 # 测试覆盖率
 coverage/
@@ -36,3 +36,5 @@ docs/
 
 # AI 协作规则（仅本地使用）
 AGENTS.md
+
+app/
