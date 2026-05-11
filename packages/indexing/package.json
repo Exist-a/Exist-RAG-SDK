@@ -1,6 +1,6 @@
 {
   "name": "@rag-sdk/indexing",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Document indexing pipeline components",
   "type": "module",
   "main": "./dist/index.js",

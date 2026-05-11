@@ -1,6 +1,6 @@
 {
   "name": "@rag-sdk/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Core types, interfaces and specifications for RAG SDK",
   "type": "module",
   "main": "./dist/index.js",
